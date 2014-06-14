@@ -1,5 +1,5 @@
 <html>
-
+<form>
 	<div class='submodule fat'>
   <div class='submodule-head head'>
     <h3>West Africa Fishing</h3>
@@ -22,8 +22,8 @@
  	</ul> 
  	</div>			
  		
+	<input type = "submit">
 	
 	
-	
-
+</form>
 <html>
