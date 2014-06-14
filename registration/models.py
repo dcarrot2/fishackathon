@@ -11,8 +11,6 @@ class Manager(models.Model):
     manager_address = models.CharField(max_length=200)
     number_of_canoes = models.IntegerField(default=0)
     
-    hull_material = models.CharField(max_length=200)
-    vessel_size = models.DecimalField(max_digits=10, decimal_places=3)
     
     def __unicode__(self):
         return self.name_of_fisher
