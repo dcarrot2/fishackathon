@@ -3,6 +3,7 @@ from django.conf.urls import patterns, url
 from registration import views
 
 urlpatterns = patterns('',
-       url(r'^$', views.registration, name='index'),
+       url(r'^A/$', views.registrationA, name='registrationA'),
+       url(r'^B/$', views.registrationB, name='registrationB')
        
 )

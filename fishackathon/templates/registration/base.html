@@ -2,6 +2,7 @@
 {% load static %}
 <html>
 	<head>
+	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="{% static 'css/bootstrap-fluid-adj.css' %}" rel="stylesheet">
@@ -10,15 +11,16 @@
     
     <link rel = "stylesheet" type = "text/css" href = "/static/registration/base.css" />
 
-    <title>Rango - {% block title %}How to Tango with Django!{% endblock %}</title>
+    <title>West Africa Fisheries</title>
     
 	</head>
 	<body class = "body">
 		<div class='submodule fat'>
   		<header class='header'>
     		<h3>West Africa Fishing</h3>
-  	</header>
+  		</header>
   	
+	{% block content %}
 	<div class="submodule-body body">
 	<p> Click on the link below to proceed.</p>
 	
@@ -37,6 +39,8 @@
  	
  	<script src="{% static 'js/jquery-2.0.3.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+	{% endblock %}
    		
  	</body>
  	
