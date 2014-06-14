@@ -9,8 +9,8 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', include('registration.views', namespace='index')),
-    url(r'^registration/', include('registration.views', namespace='registration')),
-    url(r'^licensing/', include('licensing.views', namespace='licensing')),
-    url(r'^reporting', include('reporting.views', namespace='reporting')),
+    url(r'^$', include('registration.urls', namespace='index')),
+    url(r'^registration/', include('registration.urls', namespace='registration')),
+    url(r'^licensing/', include('licensing.urls', namespace='licensing')),
+    url(r'^reporting', include('reporting.urls', namespace='reporting')),
 )
