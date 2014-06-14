@@ -11,8 +11,7 @@
   		<header class='header'>
     		<h3>Registration of Manager: Section A</h3>
   		</header>
-		<form>
-			<input type="hidden" value="{{section}}" name="section">
+		<form> 
 			<p>Name of manager</p>
 				<input type="text" name="choice1"/>
 			<p>Date of birth</p>
@@ -26,7 +25,7 @@
 				<input type="text" name="choice5" />
 			<p>Occupation</p>
 				<input type="text" name="choice6" />
-			<p>Number Phone</p>
+			<p>Phone Number</p>
 				<input type="tel" name="choice7" />
 			<p>Manager's address</p>
 				<input type="text" name="choice8" />
