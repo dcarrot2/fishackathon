@@ -1,0 +1,24 @@
+.navbar-inner{
+	background: #2d3538;
+	filter: none;
+	border:none;
+	box-shadow: none;
+}
+.navbar .nav > li > a{
+		color: #fff;
+		text-shadow: none;
+}
+.navbar .nav > li > a:hover{
+	color: #666;
+}
+.navbar .nav .active > a{
+	color: #666;
+	background: none;
+}
+.navbar .nav .active > a:hover{
+	background: none;
+}
+.navbar .divider-vertical{
+	border-left: 1px solid #1c2022;
+	border-right: 1px solid #3e4a4e;
+}
