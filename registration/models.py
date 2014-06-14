@@ -20,6 +20,11 @@ class Manager(models.Model):
 
 class Canoe(models.Model):
     owner = models.ForeignKey(Manager)
+    manager_id = models.IntegerField() #Not visible on form
+    canoe_id = models.IntegerField() #Not visible on form
+    name_of_tech_staff = models.IntegerField() #Not visible on form
+    name_of_authority = models.CharField(max_length=40) #Not visible on form
+    date_authorized = models.DateField() #Not visible on form
     current_canoe_number = models.IntegerField(default=0)
     coastal_region = models.CharField(max_length=100)
     coastal_district = models.CharField(max_length=100)
