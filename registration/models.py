@@ -1,23 +1,24 @@
 from django.db import models
 
-#Registration of canoes
+#Registration of managers
 class Manager(models.Model):
     name_of_fisher = models.CharField(max_length=200)
     date_of_birth = models.DateField()
     gender = models.CharField(max_length=1)
     occupation = models.CharField(max_length=200)
     phone_number = models.IntegerField()
+    email_address = models.EmailField()
     manager_address = models.CharField(max_length=200)
     number_of_canoes = models.IntegerField(default=0)
     
     hull_material = models.CharField(max_length=200)
     vessel_size = models.DecimalField(max_digits=10, decimal_places=3)
     
-    def __unicode(self):
+    def __unicode__(self):
         return self.name_of_fisher
     
 
-
+#Registration of canoes
 class Canoe(models.Model):
     owner = models.ForeignKey(Manager)
     manager_id = models.IntegerField() #Not visible on form
@@ -25,6 +26,7 @@ class Canoe(models.Model):
     name_of_tech_staff = models.IntegerField() #Not visible on form
     name_of_authority = models.CharField(max_length=40) #Not visible on form
     date_authorized = models.DateField() #Not visible on form
+    isApproved = models.BooleanField() #Not visible on form
     current_canoe_number = models.IntegerField(default=0)
     coastal_region = models.CharField(max_length=100)
     coastal_district = models.CharField(max_length=100)
@@ -53,5 +55,8 @@ class Canoe(models.Model):
     photo_one = models.ImageField(upload_to='static/images') #first photo of canoe
     photo_two = models.ImageField(upload_to='static/images') #second photo of canoe
     has_signature = models.BooleanField() #digital signature of fisherman
+    
+    def __unicode__(self):
+        return self.canoe_id
     
     
