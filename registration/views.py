@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from registration.models import Manager
+from registration.models import Manager, Canoe
+from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
 responses ={}
@@ -11,11 +12,12 @@ def registrationA(request):
     return render(request, "registration/register.html", {'section': "A"})
 
 def registrationB(request):
-    
+     
     return render(request, "registration/register.html", {'section':  "B"})
 
-
+@csrf_exempt
 def session(request):
+#     print request
     sessionID = request.COOKIES['sessionid']
     section = request.POST['section']
     print 'Section: ', section
@@ -24,8 +26,10 @@ def session(request):
         if (sessionID not in responses.keys()):
             print "creating a new key"
             responses[sessionID] = []
-        for i in range(0,10):
+        for i in range(0,8):
+            print i
             print request.POST["choice" + str(i+1)]
+            responses[sessionID].append(request.POST["choice" + str(i+1)])
             #responses[sessionID].append()
         print "Responses", responses
         
@@ -35,3 +39,14 @@ def session(request):
     
     if(section=="A"):
         following_section = "B"
+        
+        
+    else:
+        for x in range(len(responses[sessionID])):
+            responses[sessionID][x] = str(responses[sessionID][x])
+            
+        print "Responses: ", responses
+        m = Manager(name_of_fisher=responses[sessionID][0], date_of_birth=responses[sessionID][1])
+    
+            
+            

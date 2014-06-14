@@ -9,9 +9,9 @@
 	<body class = "body">
 		<div class='submodule fat'>
   		<header class='header'>
-    		<h3>Registration of Manager: Section A</h3>
+    		<h3>Registration of Manager: {{Section}}</h3>
   		</header>
-		<form>
+		<form action="{% url 'registration:sessions'  %}" method="post">
 			<input type="hidden" value="{{section}}" name="section">
 			<p>Name of manager</p>
 				<input type="text" name="choice1"/>
@@ -19,19 +19,19 @@
 				<input type="date" name="choice2"/>
 			<p>Sex of manager</p>
 				<input type="radio" name="choice3" />
-				<label for="choice1">Male</label><br />
-				<input type="radio" name="choice4"/>
-				<label for="choice2">Female</label><br />
+				<label for="choice3">Male</label><br />
+				<input type="radio" name="choice3"/>
+				<label for="choice4">Female</label><br />
 			<p>Nationality</p>
-				<input type="text" name="choice5" />
+				<input type="text" name="choice4" />
 			<p>Occupation</p>
-				<input type="text" name="choice6" />
+				<input type="text" name="choice5" />
 			<p>Number Phone</p>
-				<input type="tel" name="choice7" />
+				<input type="tel" name="choice6" />
 			<p>Manager's address</p>
-				<input type="text" name="choice8" />
+				<input type="text" name="choice7" />
 			<p>Number of canoes</p>
-				<input type="number" name="choice9" min="1" max="10" />
+				<input type="number" name="choice8" min="1" max="10" />
 	
 	
 	<br>
