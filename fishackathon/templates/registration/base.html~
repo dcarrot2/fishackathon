@@ -1,25 +1,19 @@
 <!DOCTYPE html>
 <html>
-<<<<<<< HEAD
-
-	<div class='submodule fat'>
-  <div class='submodule-head head'>
-    <h3>West Africa Fishing</h3>
-  </div>
-  
-=======
-	<head link rel = "stylesheet" type = "text/css" href = "/static/registration/base.css" >  
+	<head>
+	<link rel = "stylesheet" type = "text/css" href = "/static/registration/base.css" >
+	</head>
 	<body class = "body">
 		<div class='submodule fat'>
-  		<div class='submodule-head head'>
+  		<header class='header'>
     		<h3>West Africa Fishing</h3>
-  		</div>
+  		</header>
   	
->>>>>>> 7884f6556de646752984a54b77087d5b1a7f1977
+  	
   
 	<div class="submodule-body body">
 	<p> Click on the link below to proceed.</p>
-	
+
 	<ul class="raquo_bullets">
   	<li><a href="file:///Users/arturolopez/Desktop/register.html">Register</a></li>
  	</ul> 
@@ -32,15 +26,6 @@
   	<li><a href="file:///Users/arturolopez/Desktop/reporting.html">Reporting</a></li>
  	</ul> 
  	</div>			
-<<<<<<< HEAD
- 		
-	
-	
-	
-
-<html>
-=======
  	</body>
  	
 <html>
->>>>>>> 7884f6556de646752984a54b77087d5b1a7f1977
