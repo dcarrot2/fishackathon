@@ -8,10 +8,10 @@ label{
     display: inline-block;
     float: left;
     clear: left;
-    width: 300px;
+    width: 250px;
     text-align: right;
 }
 input [type text] {
   display: inline-block;
-  float: left;
+  float: right;
 }
