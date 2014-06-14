@@ -2,5 +2,5 @@ from django.shortcuts import render
 
 # Create your views here.
 
-def index(request):
+def licensing(request):
     return render(request, "licensing/licensing.html")
