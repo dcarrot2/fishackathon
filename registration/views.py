@@ -6,7 +6,7 @@ from registration.models import Manager
 responses ={}
 
 def index(request):
-    return render(request, "reporting/check.html")
+    return render(request, "registration/base.html")
 
 def registrationA(request):
     

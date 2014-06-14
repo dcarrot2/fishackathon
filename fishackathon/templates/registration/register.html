@@ -1,8 +1,17 @@
 <!DOCTYPE html>
 {% extends "registration/base.html" %}
 {% block content %}
+{% load static %}
 <html>
 	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <!-- Bootstrap -->
+	    <link href="{% static 'css/bootstrap-fluid-adj.css' %}" rel="stylesheet">
+	    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" media="screen">
+	    <link href="{% static 'css/bootstrap-responsive.css' %}" rel="stylesheet">
+	    
+	    <link rel = "stylesheet" type = "text/css" href = "/static/registration/base.css" />
+
 		<title>Registration</title>
 			
 	</head>
@@ -127,15 +136,14 @@
 			            <p><input type="file" name="avatar" id="avatar" /></p>
 			            <p><input type="submit" name="submit" id="submit" value="Upload" /></p>
 			        </form>
-					
-				
-					
-					
 				
 				<br>
 				<input type = "submit">
 			
 			  </form>
+			  
+			  <script src="{% static 'js/jquery-2.1.1.min.js' %}"></script>
+    		  <script src="{% static 'js/bootstrap.min.js' %}"></script>
 	  
 
 <html>
