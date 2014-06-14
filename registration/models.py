@@ -38,5 +38,15 @@ class Canoe(models.Model):
     type_storage = models.BooleanField() #True is ice, false is no ice
     crew_number = models.IntegerField()
     is_motorized = models.BooleanField() #True if motorized, false if not
-    model_of_engine
+    model_of_engine = models.CharField(max_length=50)
+    horsepower = models.IntegerField(default=0)
+    first_gear_type = models.CharField()
+    second_gear_type = models.CharField()
+    third_gear_type = models.CharField()
+    equipment_on_board = models.CharField()
+    date_of_registration = models.DateField()
+    photo_one = models.ImageField() #first photo of canoe
+    photo_two = models.ImageField() #second photo of canoe
+    has_signature = models.BooleanField()
+    
     
