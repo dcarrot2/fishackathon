@@ -28,20 +28,27 @@ def session(request):
         if (sessionID not in responses.keys()):
             print "creating a new key"
             responses[sessionID] = []
-        for i in range(0,8):
-            print i
-            print request.POST["choice" + str(i+1)]
-            responses[sessionID].append(request.POST["choice" + str(i+1)])
-            #responses[sessionID].append()
-        print "Responses", responses
-        
+        if(section =="A"):
+            for i in range(0,8):
+                print i
+                print request.POST["choice" + str(i+1)]
+                responses[sessionID].append(request.POST["choice" + str(i+1)])
+                #responses[sessionID].append()
+            print "Responses", responses
+        else:
+            for i in range (10,38):
+                print i
+                print request.POST["choice" + str(i)]
+                responses[sessionID].append(request.POST["choice"+str(i)])
+            print 'Responses', responses
     except(KeyError):
         print("Check try statement")
         return render(request, 'registration/register/html'), {'error_message': "You forgot to answer one or more questions"}
     
+        
     if(section=="A"):
         following_section = "B"
-        
+        return render(request, "registration/register.html", {'section': following_section}) 
     else:
         for x in range(len(responses[sessionID])):
             responses[sessionID][x] = str(responses[sessionID][x])
