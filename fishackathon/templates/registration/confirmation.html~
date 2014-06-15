@@ -12,7 +12,7 @@
 	<body class = "body">
 		<div class='submodule fat'>
   		<header class='header'>
-    		<p><font size="5">Thank you!<br>
+    		<p><font size="8">Thank you!<br>
     			Your request will soon be reviewed by official authorities.</font></p>
     			
     	<a href = "{% url 'index' %}" > Return to home page</a> <br>

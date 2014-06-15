@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% extends "registration/base.html" %}
 {% load static %}
 <html>
 <title>Licensing</title>

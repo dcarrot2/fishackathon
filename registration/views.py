@@ -7,6 +7,7 @@ import random
 
 responses ={}
 
+
 def index(request):
     return render(request, "registration/base.html")
 
@@ -21,6 +22,7 @@ def registrationB(request):
 @csrf_exempt
 def session(request):
 #     print request
+    print 4
     sessionID = request.COOKIES['sessionid']
     section = request.POST['section']
     print 'Section: ', section
@@ -37,8 +39,9 @@ def session(request):
                 #responses[sessionID].append()
             print "Responses", responses
         else:
-            for i in range (10,38):
-                print i
+            print "Request: ", request
+            for i in range (10,37):
+                print "i:",i
                 print request.POST["choice" + str(i)]
                 responses[sessionID].append(request.POST["choice"+str(i)])
             print 'Responses', responses
@@ -48,19 +51,41 @@ def session(request):
     
         
     if(section=="A"):
+        
         following_section = "B"
         return render(request, "registration/register.html", {'section': following_section}) 
-    else:
+    elif (section=="B"):
+        print"LOL"
         for x in range(len(responses[sessionID])):
             responses[sessionID][x] = str(responses[sessionID][x])
-            
-        hash = random.getrandbits(128)
-        six_char = "%006" % hash
-            
+             
+        hashe = random.getrandbits(6)
+        
+             
         print "Responses: ", responses
         m = Manager(name_of_fisher=responses[sessionID][0], date_of_birth=responses[sessionID][1], gender=responses[sessionID][2], occupation=responses[sessionID][3],
                     phone_number=responses[sessionID][4], email_address=responses[sessionID][5], manager_address=responses[sessionID][6], number_of_canoes=responses[sessionID][7])
-        c = Canoe(Manager = m, manager_id = id, canoe_id = six_char,)
-        
-        return render(request, "registration/confirmation.html")
+        c = Canoe(canoe_id = hashe, isApproved=False, current_canoe_number=responses[sessionID][10], coastal_region=responses[sessionID][11],
+                  coastal_district=responses[sessionID][12], fishing_village=responses[sessionID][13], landing_beach=responses[sessionID][14], current_canoe_name=responses[sessionID][15],
+                  type_of_ownership=responses[sessionID][16], name_canoe_owner=responses[sessionID][17], name_captain=responses[sessionID][18], year_purchased==responses[sessionID][19],
+                  year_built=responses[sessionID][20], place_built==responses[sessionID][21],)
+    return render(request, "registration/confirmation.html")
+         
+    
+#===============================================================================
+# def confirmation(request):
+#     print"LOL"
+#     for x in range(len(responses[sessionID])):
+#         responses[sessionID][x] = str(responses[sessionID][x])
+#          
+#     hash = random.getrandbits(128)
+#     six_char = "%006" % hash
+#          
+#     print "Responses: ", responses
+#     m = Manager(name_of_fisher=responses[sessionID][0], date_of_birth=responses[sessionID][1], gender=responses[sessionID][2], occupation=responses[sessionID][3],
+#                 phone_number=responses[sessionID][4], email_address=responses[sessionID][5], manager_address=responses[sessionID][6], number_of_canoes=responses[sessionID][7])
+#     c = Canoe(Manager = m, manager_id = id, canoe_id = six_char,)
+#      
+#     return render(request, "registration/confirmation.html")
+#===============================================================================
 

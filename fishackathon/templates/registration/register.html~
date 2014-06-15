@@ -4,13 +4,9 @@
 {% load static %}
 <html>
 	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	    <!-- Bootstrap -->
-	    <link href="{% static 'css/bootstrap-fluid-adj.css' %}" rel="stylesheet">
-	    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" media="screen">
-	    <link href="{% static 'css/bootstrap-responsive.css' %}" rel="stylesheet">
+		
 	    
-	    <link rel = "stylesheet" type = "text/css" href = "/static/registration/base.css" />
+	    
 
 		<title>Registration</title>
 			
@@ -22,7 +18,7 @@
   		</header>
 		{% if section == "A" %}
 
-		<form action="{% url 'registration:session'  %}" method="post">
+		<form action="{% url 'registration:sessions'  %}" method="post">
 			<input type="hidden" value="{{section}}" name="section">
 			<p>Name of manager</p>
 				<input type="text" name="choice1"/>
@@ -45,17 +41,18 @@
 				<input type="number" name="choice8" min="1" max="10" />
 	
 	
-	<br>
-	<input type = "submit">
+		<br>
+		<input type = "submit" value="Next" />
 
-	  {% elif section == "B" %}
-	  <div class='submodule fat'>
-  		<header class='header'>
-    		<h3>Canoe's Characteristics:Section B </h3>
-  		</header>
-			  <form action="{% url 'registration:session'  %}" method="post">
+		{% elif section == "B" %}
+	  	<div class='submodule fat'>
+  			<header class='header'>
+    			<h3>Canoe's Characteristics:Section B </h3>
+  			</header>
+			  <form action="{% url 'registration:sessions'  %}" method="post">
+				<input type="hidden" value="{{section}}" name="section">
 			  			
-				<p>Current canoe no</p>
+				<p>Current canoe number (type None if no number)</p>
 					<input type="text" name="choice10"/>
 				<p>Coastal Region</p>
 					<input type="text" name="choice11"/>
@@ -77,18 +74,18 @@
 					<label for = "choice3">Joint Venture</label><br />
 					<input type="radio" name="choice16" />
 					<label for = "choice4">Other</label><br />
-				<p>Names of the conae owner</p>
+				<p>Names of the canoe owner</p>
 					<input type="text" name="choice17"/>
 				<p>Name of captain/boatswain</p>
 					<input type="text" name="choice18"/>
 				<p>Year purchased</p>
-					<input type="text" name="choice19"/>
+					<input type="month" name="choice19"/>
 				<p>Year built</p>
-					<input type="text" name="choice20"/>
+					<input type="month" name="choice20"/>
 				<p>Place built</p>
 					<input type="text" name="choice21"/>
 				<p>First year of fishing </p>
-					<input type="text" name="choice22"/>
+					<input type="month" name="choice22"/>
 				<p>Main construction material</p>
 					<input type="text" name="choice23"/>
 				<p>Length overall (meters)</p>
@@ -99,7 +96,7 @@
 					<input type="radio" name="choice25" />
 					<label for = "choice2">No Ice</label><br />
 				<p>Crew Numbers</p>
-					<input type="text" name="choice26"/>
+					<input type="number" name="choice26"/>
 				<p>Motorized or not?</p>
 					<input type="radio" name="choice27"/>
 					<label for = "choice1">Yes</label><br />
@@ -108,7 +105,7 @@
 				<p>Model of engine</p>
 					<input type="text" name="choice28"/>
 				<p>Horsepower of engine</p>
-					<input type="text" name="choice29"/>
+					<input type="number" name="choice29"/>
 				<p>First gear type </p>
 					<input type="text" name="choice30"/>
 				<p>Second gear type </p>
@@ -117,32 +114,34 @@
 					<input type="text" name="choice32"/>
 				<p>Equipment onboard</p>
 					
-					<input type="checkbox" name="choice33"/>
+					<input type="radio" name="choice33"/>
 					<label for = "choice1">Compass</label><br />
-					<input type="checkbox" name="choice34" />
+					<input type="radio" name="choice33" />
 					<label for = "choice2">GPS</label><br />
-					<input type="checkbox" name="choice35" />
+					<input type="radio" name="choice33" />
 					<label for = "choice3">Life jacket</label><br />
-					<input type="checkbox" name="choice36" />
+					<input type="radio" name="choice33" />
 					<label for = "choice4">Other</label><br />
-					<p>Date of registration</p>
-						<input type="text" name="choice37"/>
-				
+				<p>Date of registration</p>
+					<input type="date" name="choice34"/>
+				<p>Digital Signature (I agree with the attributes set above)</p>
+					<input type="radio" name="choice35" />
+					<label for="choice1">I agree</label><br />
+					
+
 					
 				<h1>Photos of the canoe</h1>
 			        <form id="upload-form" action="<?php echo URL::site('avatar/upload') ?>" method="post" enctype="multipart/form-data">
 			            <p>Choose file:</p>
-			            <p><input type="file" name="avatar" id="avatar" /></p>
+			            <p><input type="file" name="choice36" id="avatar" /></p>
 			            <p><input type="submit" name="submit" id="submit" value="Upload" /></p>
-			        </form>
+			        
 				
 				<br>
-				<input type = "submit">
-		
-			  
-			  <script src="{% static 'js/jquery-2.1.1.min.js' %}"></script>
-    		  <script src="{% static 'js/bootstrap.min.js' %}"></script>
-	  
-	{%endif%}
-<html>
+				<input type = "submit" />
+
+				</form>
+		{%endif%}
+		</body>
+</html>
 {% endblock %}

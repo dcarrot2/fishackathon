@@ -1,0 +1,11 @@
+.header p{
+	padding-top: 10px;
+}
+
+a: link{
+	color: #FF0000;
+}
+
+a: visited{
+	color: #00FF00;
+}

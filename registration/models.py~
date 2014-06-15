@@ -49,7 +49,7 @@ class Canoe(models.Model):
     second_gear_type = models.CharField(max_length=50)
     third_gear_type = models.CharField(max_length=50)
     equipment_on_board = models.CharField(max_length=50)
-    date_of_registration = models.DateField(blank=True)
+    date_of_registration = models.DateField()
     photo_one = models.ImageField(upload_to='static/images') #first photo of canoe
     photo_two = models.ImageField(upload_to='static/images') #second photo of canoe
     has_signature = models.BooleanField() #digital signature of fisherman
