@@ -51,7 +51,7 @@ class Canoe(models.Model):
     equipment_on_board = models.CharField(max_length=50)
     date_of_registration = models.DateField(blank=True)
     photo_one = models.ImageField(upload_to='static/images') #first photo of canoe
-    photo_two = models.ImageField(upload_to='static/images') #second photo of canoe
+    
     has_signature = models.BooleanField() #digital signature of fisherman
     
     def __unicode__(self):

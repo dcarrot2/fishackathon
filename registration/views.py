@@ -67,8 +67,13 @@ def session(request):
                     phone_number=responses[sessionID][4], email_address=responses[sessionID][5], manager_address=responses[sessionID][6], number_of_canoes=responses[sessionID][7])
         c = Canoe(canoe_id = hashe, isApproved=False, current_canoe_number=responses[sessionID][10], coastal_region=responses[sessionID][11],
                   coastal_district=responses[sessionID][12], fishing_village=responses[sessionID][13], landing_beach=responses[sessionID][14], current_canoe_name=responses[sessionID][15],
-                  type_of_ownership=responses[sessionID][16], name_canoe_owner=responses[sessionID][17], name_captain=responses[sessionID][18], year_purchased==responses[sessionID][19],
-                  year_built=responses[sessionID][20], place_built==responses[sessionID][21],)
+                  type_of_ownership=responses[sessionID][16], name_canoe_owner=responses[sessionID][17], name_captain=responses[sessionID][18], year_purchased=responses[sessionID][19],
+                  year_built=responses[sessionID][20], place_built=responses[sessionID][21],first_year_fishing=responses[sessionID][22], construction_material=responses[sessionID][23],
+                  length_overall=responses[sessionID][24],type_storage=responses[sessionID][25], crew_number=responses[sessionID][26], is_motorized=responses[sessionID][27], model_of_engine=responses[sessionID][28],
+                  horsepower=responses[sessionID][29], first_gear_type=responses[sessionID][30], second_gear_type=responses[sessionID][31],third_gear_type=responses[sessionID][32],equipment_on_board=responses[sessionID][33],
+                  date_of_registration=responses[sessionID][34], photo_one=responses[sessionID][35])
+        m.save()
+        c.save()
     return render(request, "registration/confirmation.html")
          
     
