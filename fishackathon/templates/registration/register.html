@@ -18,43 +18,42 @@
 	<body class = "body">
 		<div class='submodule fat'>
   		<header class='header'>
-    		<h3>Registration of Manager: Section A</h3>
+    		<h3>Registration of Manager: {{Section}}</h3>
   		</header>
-  		{% ifequal section "A" %}
-  		  
-			<form>
-				<input type="hidden" value="{{section}}" name="section">
-				<p>Name of manager</p>
-					<input type="text" name="choice1"/>
-				<p>Date of birth</p>
-					<input type="date" name="choice2"/>
-				<p>Sex of manager</p>
-					<input type="radio" name="choice3" />
-					<label for="choice1">Male</label><br />
-					<input type="radio" name="choice4"/>
-					<label for="choice2">Female</label><br />
-				<p>Nationality</p>
-					<input type="text" name="choice5" />
-				<p>Occupation</p>
-					<input type="text" name="choice6" />
-				<p>Number Phone</p>
-					<input type="tel" name="choice7" />
-				<p>Manager's address</p>
-					<input type="text" name="choice8" />
-				<p>Number of canoes</p>
-					<input type="number" name="choice9" min="1" max="10" />
-		
-				<br>
-				<input type = "submit">
+		{% if section == "A" %}
+
+		<form action="{% url 'registration:sessions'  %}" method="post">
+			<input type="hidden" value="{{section}}" name="section">
+			<p>Name of manager</p>
+				<input type="text" name="choice1"/>
+			<p>Date of birth</p>
+				<input type="date" name="choice2"/>
+			<p>Sex of manager</p>
+				<input type="radio" name="choice3" />
+				<label for="choice3">Male</label><br />
+				<input type="radio" name="choice3"/>
+				<label for="choice4">Female</label><br />
+			<p>Nationality</p>
+				<input type="text" name="choice4" />
+			<p>Occupation</p>
+				<input type="text" name="choice5" />
+			<p>Number Phone</p>
+				<input type="tel" name="choice6" />
+			<p>Manager's address</p>
+				<input type="text" name="choice7" />
+			<p>Number of canoes</p>
+				<input type="number" name="choice8" min="1" max="10" />
 	
-		    </form>
-	  {% endif %}
+	
+	<br>
+	<input type = "submit">
+
 	  {% elif section == "B" %}
 	  <div class='submodule fat'>
   		<header class='header'>
     		<h3>Canoe's Characteristics:Section B </h3>
   		</header>
-			  <form>
+			  <form action="{% url 'registration:sessions'  %}" method="post">
 			  			
 				<p>Current canoe no</p>
 					<input type="text" name="choice10"/>
@@ -72,62 +71,62 @@
 					
 					<input type="radio" name="choice16"/>
 					<label for = "choice1">Individual</label><br />
-					<input type="radio" name="choice17" />
+					<input type="radio" name="choice16" />
 					<label for = "choice2">Family</label><br />
-					<input type="radio" name="choice18" />
+					<input type="radio" name="choice16" />
 					<label for = "choice3">Joint Venture</label><br />
-					<input type="radio" name="choice19" />
+					<input type="radio" name="choice16" />
 					<label for = "choice4">Other</label><br />
 				<p>Names of the conae owner</p>
-					<input type="text" name="choice20"/>
+					<input type="text" name="choice17"/>
 				<p>Name of captain/boatswain</p>
-					<input type="text" name="choice21"/>
+					<input type="text" name="choice18"/>
 				<p>Year purchased</p>
-					<input type="text" name="choice22"/>
+					<input type="text" name="choice19"/>
 				<p>Year built</p>
-					<input type="text" name="choice23"/>
+					<input type="text" name="choice20"/>
 				<p>Place built</p>
-					<input type="text" name="choice24"/>
+					<input type="text" name="choice21"/>
 				<p>First year of fishing </p>
-					<input type="text" name="choice25"/>
+					<input type="text" name="choice22"/>
 				<p>Main construction material</p>
-					<input type="text" name="choice25"/>
+					<input type="text" name="choice23"/>
 				<p>Length overall (meters)</p>
-					<input type="text" name="choice25"/>
+					<input type="text" name="choice24"/>
 				<p>Type of storage</p>
-					<input type="radio" name="choice26"/>
+					<input type="radio" name="choice25"/>
 					<label for = "choice1">Ice</label><br />
-					<input type="radio" name="choice27" />
+					<input type="radio" name="choice25" />
 					<label for = "choice2">No Ice</label><br />
 				<p>Crew Numbers</p>
-					<input type="text" name="choice28"/>
+					<input type="text" name="choice26"/>
 				<p>Motorized or not?</p>
-					<input type="radio" name="choice29"/>
+					<input type="radio" name="choice27"/>
 					<label for = "choice1">Yes</label><br />
-					<input type="radio" name="choice30" />
+					<input type="radio" name="choice27" />
 					<label for = "choice2">No</label><br />
 				<p>Model of engine</p>
-					<input type="text" name="choice31"/>
+					<input type="text" name="choice28"/>
 				<p>Horsepower of engine</p>
-					<input type="text" name="choice32"/>
+					<input type="text" name="choice29"/>
 				<p>First gear type </p>
-					<input type="text" name="choice33"/>
+					<input type="text" name="choice30"/>
 				<p>Second gear type </p>
-					<input type="text" name="choice34"/>
+					<input type="text" name="choice31"/>
 				<p>Third gear type</p>
-					<input type="text" name="choice35"/>
+					<input type="text" name="choice32"/>
 				<p>Equipment onboard</p>
 					
-					<input type="checkbox" name="choice36"/>
+					<input type="checkbox" name="choice33"/>
 					<label for = "choice1">Compass</label><br />
-					<input type="checkbox" name="choice37" />
+					<input type="checkbox" name="choice34" />
 					<label for = "choice2">GPS</label><br />
-					<input type="checkbox" name="choice38" />
+					<input type="checkbox" name="choice35" />
 					<label for = "choice3">Life jacket</label><br />
-					<input type="checkbox" name="choice39" />
+					<input type="checkbox" name="choice36" />
 					<label for = "choice4">Other</label><br />
 					<p>Date of registration</p>
-						<input type="text" name="choice35"/>
+						<input type="text" name="choice37"/>
 				
 					
 				<h1>Photos of the canoe</h1>
@@ -139,12 +138,11 @@
 				
 				<br>
 				<input type = "submit">
-			
-			  </form>
+		
 			  
 			  <script src="{% static 'js/jquery-2.1.1.min.js' %}"></script>
     		  <script src="{% static 'js/bootstrap.min.js' %}"></script>
 	  
-
+	{%endif%}
 <html>
 {% endblock %}
