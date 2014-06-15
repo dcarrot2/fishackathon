@@ -3,7 +3,7 @@
 
 <html>
 	<head>
-	{% block content %}
+	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="{% static 'css/bootstrap-fluid-adj.css' %}" rel="stylesheet">
@@ -40,6 +40,8 @@
  	
  	<script src="{% static 'js/jquery-2.0.3.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+	{% endblock %}
    		
  	</body>
  	

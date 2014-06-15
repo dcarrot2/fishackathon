@@ -3,7 +3,9 @@ from registration.models import Manager, Canoe
 from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
+
 responses ={}
+
 def index(request):
     return render(request, "registration/base.html")
 
@@ -40,13 +42,10 @@ def session(request):
     if(section=="A"):
         following_section = "B"
         
-        
     else:
         for x in range(len(responses[sessionID])):
             responses[sessionID][x] = str(responses[sessionID][x])
             
         print "Responses: ", responses
         m = Manager(name_of_fisher=responses[sessionID][0], date_of_birth=responses[sessionID][1])
-    
-            
-            
+
