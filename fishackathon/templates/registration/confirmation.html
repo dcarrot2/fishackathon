@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% load static%}
+{%extend base.html%}
 <html>
 <title>Reporting</title>
 <head>
@@ -8,25 +8,17 @@
 	<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" media="screen">
 	<link href="{% static 'css/bootstrap-responsive.css' %}" rel="stylesheet">
 	</head>
+	
 	<body class = "body">
 		<div class='submodule fat'>
   		<header class='header'>
-    		<h3><b>Reporting Illegal Fishing</b></h3>
+    		<p><font size="12">Thank you,<br>
+    			your request will soon be reviewed by official authorities.</font></p>
+    			
+    	<a href = “” > Return to home page</a> <br>
+    	
+ 			
   		</header>
-<form> 
-	<label>
-	ID number:
-		<input type = "text" name = "name">
-	</label>
-	<br>
-	
-	<label>
-	Type of boat:
-		<input type = "text" name = "name">
-	</label>
-	<br>
-	<input type = "submit">
-	
-</form>
+  		
 
 <html>
