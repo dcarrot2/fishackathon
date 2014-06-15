@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from registration.models import Manager, Canoe
 from django.views.decorators.csrf import csrf_exempt
+import random
 # Create your views here.
 
 
@@ -43,7 +44,7 @@ def session(request):
             print 'Responses', responses
     except(KeyError):
         print("Check try statement")
-        return render(request, 'registration/register/html'), {'error_message': "You forgot to answer one or more questions"}
+        return render(request, 'registration/register.html'), {'error_message': "You forgot to answer one or more questions"}
     
         
     if(section=="A"):
@@ -53,6 +54,13 @@ def session(request):
         for x in range(len(responses[sessionID])):
             responses[sessionID][x] = str(responses[sessionID][x])
             
+        hash = random.getrandbits(128)
+        six_char = "%006" % hash
+            
         print "Responses: ", responses
-        m = Manager(name_of_fisher=responses[sessionID][0], date_of_birth=responses[sessionID][1])
+        m = Manager(name_of_fisher=responses[sessionID][0], date_of_birth=responses[sessionID][1], gender=responses[sessionID][2], occupation=responses[sessionID][3],
+                    phone_number=responses[sessionID][4], email_address=responses[sessionID][5], manager_address=responses[sessionID][6], number_of_canoes=responses[sessionID][7])
+        c = Canoe(Manager = m, manager_id = id, canoe_id = six_char,)
+        
+        return render(request, "registration/confirmation.html")
 
